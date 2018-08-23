@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Rectangle Width="100"
-                   Height="100"
-                   Fill="Green">
+        <Rectangle Width="124"
+                   Height="124"
+                   Fill="Red">
             <Rectangle.ToolTip>
-                <stickytooltip:StickyTooltip Content="XD">
+                <stickytooltip:StickyTooltip Content="XDDDDDDD">
                 </stickytooltip:StickyTooltip>
             </Rectangle.ToolTip>
         </Rectangle>                   

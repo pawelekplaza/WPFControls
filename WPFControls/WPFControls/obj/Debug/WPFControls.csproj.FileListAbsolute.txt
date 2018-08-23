@@ -1,0 +1,12 @@
+C:\Users\Dami\Desktop\paw\WPFControls\WPFControls\bin\Debug\WPFControls.dll
+C:\Users\Dami\Desktop\paw\WPFControls\WPFControls\bin\Debug\WPFControls.pdb
+C:\Users\Dami\Desktop\paw\WPFControls\WPFControls\obj\Debug\WPFControls.csprojResolveAssemblyReference.cache
+C:\Users\Dami\Desktop\paw\WPFControls\WPFControls\obj\Debug\StickyTooltip\StickyTooltip.baml
+C:\Users\Dami\Desktop\paw\WPFControls\WPFControls\obj\Debug\StickyTooltip\StickyTooltip.g.cs
+C:\Users\Dami\Desktop\paw\WPFControls\WPFControls\obj\Debug\WPFControls_MarkupCompile.cache
+C:\Users\Dami\Desktop\paw\WPFControls\WPFControls\obj\Debug\WPFControls.g.resources
+C:\Users\Dami\Desktop\paw\WPFControls\WPFControls\obj\Debug\WPFControls.Properties.Resources.resources
+C:\Users\Dami\Desktop\paw\WPFControls\WPFControls\obj\Debug\WPFControls.csproj.GenerateResource.Cache
+C:\Users\Dami\Desktop\paw\WPFControls\WPFControls\obj\Debug\WPFControls.csproj.CoreCompileInputs.cache
+C:\Users\Dami\Desktop\paw\WPFControls\WPFControls\obj\Debug\WPFControls.dll
+C:\Users\Dami\Desktop\paw\WPFControls\WPFControls\obj\Debug\WPFControls.pdb
