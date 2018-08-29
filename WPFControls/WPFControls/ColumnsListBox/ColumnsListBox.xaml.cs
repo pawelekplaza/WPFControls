@@ -71,7 +71,7 @@ namespace WPFControls.ColumnsListBox
             var itemsPerColumn = (int)Math.Ceiling((double)Items.Count / Columns);
             var itemsAdded = 0;
 
-            for (int i = 0; i < Columns; i++)
+            for (int i = 0; i < Dispatcher.Invoke(() => Columns); i++)
             {
                 var tempList = new List<object>();
                 await Task.Factory.StartNew(() =>
@@ -89,8 +89,8 @@ namespace WPFControls.ColumnsListBox
                             break;
                         }
                     }
-                });                
-                ColumnsSource.Add(tempList);
+                });
+                Dispatcher.Invoke(() => ColumnsSource.Add(tempList));
             }
         }
     }
