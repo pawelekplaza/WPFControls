@@ -3,17 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:stickytooltip="clr-namespace:WPFControls.StickyTooltip;assembly=WPFControls"
+        xmlns:columnslistbox="clr-namespace:WPFControls.ColumnsListBox;assembly=WPFControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Rectangle Width="100"
-                   Height="100"
-                   Fill="Green">
-            <Rectangle.ToolTip>
-                <stickytooltip:StickyTooltip Content="XD">
-                </stickytooltip:StickyTooltip>
-            </Rectangle.ToolTip>
-        </Rectangle>                   
+
+    <Window.Resources>
+
+        <Style x:Key="itemStyle" TargetType="{x:Type ContentControl}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                        <TextBlock Text="{Binding }" Foreground="#dbdbdb" Margin="0"
+                                   FocusVisualStyle="{x:Null}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#454545">
+
+        <columnslistbox:ColumnsListBox x:Name="list"
+                                       Columns="5"
+                                       ItemContainerStyle="{StaticResource itemStyle}"/>
+
     </Grid>
 </Window>

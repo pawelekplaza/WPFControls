@@ -47,12 +47,37 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ColumnsListBox\ColumnsListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ColumnsListBox\Helpers\InternalListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ColumnsListBox\Helpers\CustomListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StickyTooltip\StickyTooltip.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColumnsListBox\ColumnsListBox.xaml.cs">
+      <DependentUpon>ColumnsListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColumnsListBox\Helpers\Converters\ControlWidthAndColumnsToColumnWidth.cs" />
+    <Compile Include="ColumnsListBox\Helpers\CustomBoxesInfo.cs" />
+    <Compile Include="ColumnsListBox\Helpers\InternalBoxesInfo.cs" />
+    <Compile Include="ColumnsListBox\Helpers\InternalListBox.xaml.cs">
+      <DependentUpon>InternalListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColumnsListBox\Helpers\CustomListBox.xaml.cs">
+      <DependentUpon>CustomListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColumnsListBox\Helpers\VisualChildHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

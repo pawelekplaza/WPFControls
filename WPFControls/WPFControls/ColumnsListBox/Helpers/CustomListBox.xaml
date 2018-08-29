@@ -1,0 +1,46 @@
+﻿<ListBox x:Class="WPFControls.ColumnsListBox.Helpers.CustomListBox"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+         xmlns:converters="clr-namespace:WPFControls.ColumnsListBox.Helpers.Converters"
+         mc:Ignorable="d" 
+         d:DesignHeight="300" d:DesignWidth="300"
+         x:Name="listBox">
+
+    <ListBox.Resources>
+        <converters:ControlWidthAndColumnsToColumnWidth x:Key="ControlWidthAndColumnsToColumnWidth"/>
+    </ListBox.Resources>
+
+    <ListBox.Style>
+        <Style TargetType="{x:Type ListBox}">
+            <Setter Property="VirtualizingPanel.IsVirtualizing" Value="True"/>
+            <Setter Property="VirtualizingPanel.VirtualizationMode" Value="Recycling"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Width">
+                <Setter.Value>
+                    <MultiBinding Converter="{StaticResource ControlWidthAndColumnsToColumnWidth}">
+                        <Binding Path="WholeWidth" ElementName="listBox"/>
+                        <Binding Path="Columns" ElementName="listBox"/>
+                    </MultiBinding>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel IsItemsHost="True"
+                                                SnapsToDevicePixels="True"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ListBox.Style>
+    
+</ListBox>
