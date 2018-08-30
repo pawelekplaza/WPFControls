@@ -23,7 +23,6 @@
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
-            <Setter Property="IsTabStop" Value="False"/>
             <Setter Property="Width">
                 <Setter.Value>
                     <MultiBinding Converter="{StaticResource ControlWidthAndColumnsToColumnWidth}">

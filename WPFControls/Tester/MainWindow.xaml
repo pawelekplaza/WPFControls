@@ -10,23 +10,26 @@
     <Window.Resources>
 
         <Style x:Key="itemStyle" TargetType="{x:Type ContentControl}">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
+                        <TextBlock Text="{Binding }" Foreground="#dbdbdb" Margin="0"
+                                   x:Name="txt"
+                                   FocusVisualStyle="{x:Null}"/>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsEnabled" Value="True">
-                                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="LightSkyBlue" TargetName="txt"/>
+                                <Setter Property="Foreground" Value="#FF464646" TargetName="txt"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
-                        <TextBlock Text="{Binding }" Foreground="#dbdbdb" Margin="0"
-                                   FocusVisualStyle="{x:Null}"/>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
     </Window.Resources>
     <Grid Background="#454545">
-        
+
         <columnslistbox:ColumnsListBox x:Name="list"
                                        Columns="5"
                                        ItemContainerStyle="{StaticResource itemStyle}"/>

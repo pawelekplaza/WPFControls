@@ -20,5 +20,17 @@ namespace WPFControls.ColumnsListBox.Helpers
                     yield return childOfChild;
             }
         }
+
+        public static IEnumerable<T> FindDirectChildren<T>(DependencyObject depObj) where T : DependencyObject
+        {
+            if (depObj == null)
+                yield return null;
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+            {
+                DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
+                if (child != null && child is T)
+                    yield return (T)child;
+            }
+        }
     }
 }

@@ -70,6 +70,7 @@
     </Compile>
     <Compile Include="ColumnsListBox\Helpers\Converters\ControlWidthAndColumnsToColumnWidth.cs" />
     <Compile Include="ColumnsListBox\Helpers\CustomBoxesInfo.cs" />
+    <Compile Include="ColumnsListBox\Helpers\Interfaces\ISelectable.cs" />
     <Compile Include="ColumnsListBox\Helpers\InternalBoxesInfo.cs" />
     <Compile Include="ColumnsListBox\Helpers\InternalListBox.xaml.cs">
       <DependentUpon>InternalListBox.xaml</DependentUpon>
@@ -77,6 +78,7 @@
     <Compile Include="ColumnsListBox\Helpers\CustomListBox.xaml.cs">
       <DependentUpon>CustomListBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ColumnsListBox\Helpers\SelectionNotifier.cs" />
     <Compile Include="ColumnsListBox\Helpers\VisualChildHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -103,5 +105,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

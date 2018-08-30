@@ -14,18 +14,6 @@ namespace WPFControls.ColumnsListBox
     {
         private InternalListBox _internalListBox;
 
-        public ColumnsListBox()
-        {
-            InitializeComponent();
-            Loaded += OnColumnsListBoxLoaded;
-        }
-
-        protected override void OnItemsSourceChanged(IEnumerable oldValue, IEnumerable newValue)
-        {
-            base.OnItemsSourceChanged(oldValue, newValue);
-            PrepareColumnsSource();
-        }
-
         public int Columns
         {
             get { return (int)GetValue(ColumnsProperty); }
@@ -41,6 +29,12 @@ namespace WPFControls.ColumnsListBox
         }
         public static readonly DependencyProperty ColumnsSourceProperty =
             DependencyProperty.Register("ColumnsSource", typeof(ObservableCollection<IEnumerable>), typeof(ColumnsListBox), new PropertyMetadata(new ObservableCollection<IEnumerable>()));
+
+        public ColumnsListBox()
+        {
+            InitializeComponent();
+            Loaded += OnColumnsListBoxLoaded;
+        }
 
         public void PageDown() =>
             _internalListBox.PageDown();
@@ -59,6 +53,12 @@ namespace WPFControls.ColumnsListBox
 
         public void ScrollEnd() =>
             _internalListBox.ScrollEnd();
+
+        protected override void OnItemsSourceChanged(IEnumerable oldValue, IEnumerable newValue)
+        {
+            base.OnItemsSourceChanged(oldValue, newValue);
+            PrepareColumnsSource();
+        }
 
         private void OnColumnsListBoxLoaded(object sender, RoutedEventArgs e)
         {

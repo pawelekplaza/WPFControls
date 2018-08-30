@@ -9,12 +9,6 @@ namespace WPFControls.ColumnsListBox.Helpers
     {
         private List<ScrollViewer> _scrollViewers = new List<ScrollViewer>();
 
-        public InternalListBox()
-        {
-            InitializeComponent();
-            Loaded += OnInternalListBoxLoaded;
-        }
-
         public int Columns
         {
             get { return (int)GetValue(ColumnsProperty); }
@@ -30,6 +24,12 @@ namespace WPFControls.ColumnsListBox.Helpers
         }
         public static readonly DependencyProperty ContainerStyleProperty =
             DependencyProperty.Register("ContainerStyle", typeof(Style), typeof(InternalListBox), new PropertyMetadata(default(Style)));
+
+        public InternalListBox()
+        {
+            InitializeComponent();
+            Loaded += OnInternalListBoxLoaded;
+        }
 
         public void PageDown() =>
             _scrollViewers.FirstOrDefault()?.PageDown();
